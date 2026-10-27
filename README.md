@@ -3,6 +3,7 @@
 A responsive, dark-violet personal portfolio for GitHub Pages. Built with plain HTML, CSS, and JavaScript; no build step or framework required.
 
 ## Features
+- Desktop and mobile motion system with scroll reveals, subtle ambient movement, pointer spotlight, and reduced-motion support
 - Responsive layout with mobile navigation
 - StudentOS project spotlight and other genuine areas of work
 - Dark violet visual system aligned with StudentOS
@@ -17,7 +18,7 @@ A responsive, dark-violet personal portfolio for GitHub Pages. Built with plain 
 4. GitHub Pages will provide a URL, commonly `https://GLITCHLORDX.github.io/faizaan-ameen/`.
 
 ## Important SEO setup before publishing
-Search for and replace every occurrence of `https://YOUR-DOMAIN.example/` in:
+Search for and replace every occurrence of `https://faizaanameenr.github.io/Faizaan-Ameen/` in:
 - `index.html`
 - `robots.txt`
 - `sitemap.xml`
@@ -34,7 +35,7 @@ Then:
 ## Personalize before publishing
 - Add only professional social links that actually belong to you.
 - Add a verified contact method if you want public inquiries.
-- Add real screenshots, demo links, and repository links when available.
+- Replace the CSS-based StudentOS concept visual with real screenshots from the shipped app when those image files are available.
 - Review all project status descriptions and update them as work changes.
 - If you own a custom domain, configure it in GitHub Pages and update canonical, Open Graph, sitemap, and JSON-LD URLs to match.
 
