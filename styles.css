@@ -192,3 +192,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
 @media(prefers-reduced-motion:reduce){
  .student-device{transform:none}
 }
+
+
+/* Desktop showcase: give the real StudentOS screens more visual weight. */
+@media (min-width: 1101px) {
+  .student-showcase,
+  .project-featured .student-showcase { min-height: 560px !important; }
+  .student-device-main { width: 46%; height: 80%; left: 28%; top: 8%; }
+  .student-device-side { width: 35%; height: 67%; left: 4%; top: 19%; }
+  .student-device-back { width: 33%; height: 64%; right: 4%; top: 22%; }
+}
