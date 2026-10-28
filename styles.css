@@ -56,3 +56,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
  .role-rotator.role-exit { opacity:1; transform:none; filter:none; }
  .role-rotator.role-enter { animation:none; }
 }
+
+
+/* StudentOS project links and vertically stacked APK releases */
+.student-links{display:flex;flex-direction:column;align-items:flex-start;gap:13px;margin:2px 0 26px}
+.student-links .text-link{line-height:1.5}
+.release-list{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:18px}
+.release-heading{display:flex;justify-content:space-between;gap:10px;color:#8d83a6;font:8px var(--mono);letter-spacing:.13em;margin-bottom:2px}
+.release-card{border:1px solid var(--line);border-radius:6px;background:rgba(7,6,13,.35);padding:17px}
+.release-current{border-color:rgba(155,123,255,.42);background:linear-gradient(130deg,rgba(117,81,205,.11),rgba(255,255,255,.012))}
+.release-topline,.release-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.release-version{font:11px var(--mono);color:#e1d7ff;letter-spacing:.06em}
+.release-status{font:8px var(--mono);letter-spacing:.1em;color:#b8a0ff;border:1px solid rgba(155,123,255,.3);padding:5px 7px;border-radius:3px}
+.release-archived{color:#a7a1b8;border-color:var(--line)}
+.release-card h4{font-size:15px;margin:13px 0 6px;letter-spacing:-.02em}
+.release-card>p{font-size:10px;line-height:1.8;color:var(--muted);margin:0 0 15px;overflow-wrap:anywhere}
+.release-download{display:inline-flex;align-items:center;justify-content:center;gap:16px;padding:11px 13px;background:var(--violet);color:#120d22;font-size:10px;font-weight:800;border-radius:4px}
+.release-download span{font-size:15px}
+.release-source{font-size:10px;font-weight:700;color:#c9bbf5}
+.release-unavailable{background:#282333;color:#898197;cursor:not-allowed}
+.release-note{display:block;margin-top:13px;color:#8d849f;font-size:9px;line-height:1.7}
+@media(max-width:560px){.release-card{padding:14px}.release-actions{align-items:flex-start;flex-direction:column}.release-heading{font-size:7px}.student-links{gap:15px}}
