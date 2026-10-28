@@ -40,3 +40,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
   .project-card,.toolkit-card,.button { transition:none!important; }
   body { background-image:none; }
 }
+
+
+/* Rotating hero role */
+.hero-heading { max-width: 760px; }
+.role-rotator { display:inline-block; min-width:0; white-space:nowrap; transform-origin:50% 80%; }
+.role-rotator.role-exit { opacity:0; transform:translateY(9px); filter:blur(3px); }
+.role-rotator.role-enter { animation: role-enter .42s cubic-bezier(.2,.75,.2,1) both; }
+@keyframes role-enter { from { opacity:0; transform:translateY(-9px); filter:blur(3px); } to { opacity:1; transform:translateY(0); filter:blur(0); } }
+@media(max-width:760px) {
+ .hero-heading { max-width:100%; }
+ .role-rotator { white-space:normal; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .role-rotator.role-exit { opacity:1; transform:none; filter:none; }
+ .role-rotator.role-enter { animation:none; }
+}
