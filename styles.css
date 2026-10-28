@@ -202,3 +202,42 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
   .student-device-side { width: 35%; height: 67%; left: 4%; top: 19%; }
   .student-device-back { width: 33%; height: 64%; right: 4%; top: 22%; }
 }
+
+
+/* StudentOS showcase fix: show complete screens at both desktop and mobile sizes, hide status-bar clock. */
+.student-device { background:#0c0a13; }
+.student-device img {
+  object-fit:fill !important;
+  object-position:center !important;
+}
+/* Cover only the screenshot status-bar strip; keep the rest of each app screen visible. */
+.student-device::after {
+  content:"";
+  position:absolute;
+  z-index:5;
+  top:0;
+  left:0;
+  right:0;
+  height:5.2%;
+  background:#0c0a13;
+  pointer-events:none;
+}
+@media (min-width:761px) {
+  .student-showcase,
+  .project-featured .student-showcase { min-height:620px !important; }
+  .student-device-main { width:42%; height:86%; left:29%; top:7%; }
+  .student-device-side { width:31%; height:72%; left:3%; top:15%; }
+  .student-device-back { width:30%; height:69%; right:3%; top:18%; }
+}
+@media (max-width:760px) {
+  .project-featured .project-visual.student-showcase { min-height:440px !important; }
+  .student-device-main { width:43%; height:79%; left:29%; top:8%; }
+  .student-device-side { width:32%; height:65%; left:3%; top:18%; }
+  .student-device-back { width:30%; height:62%; right:3%; top:21%; }
+}
+@media (max-width:560px) {
+  .project-featured .project-visual.student-showcase { min-height:390px !important; }
+  .student-device-main { width:45%; height:78%; left:28%; top:7%; }
+  .student-device-side { width:31%; height:62%; left:2%; top:19%; }
+  .student-device-back { width:29%; height:59%; right:2%; top:22%; }
+}
