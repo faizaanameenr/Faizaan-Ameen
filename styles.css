@@ -451,3 +451,68 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
 @media (prefers-reduced-motion: reduce) {
   .portrait-frame { transform: none; }
 }
+
+
+/* Interactive portrait hover: subtle lift, zoom, violet glow, and a light sweep. */
+.portrait-frame {
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .45s ease, border-color .35s ease;
+  will-change: transform;
+}
+.portrait-frame img {
+  transition: transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease;
+}
+.portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 28%, rgba(196,174,255,.2) 47%, rgba(255,255,255,.04) 52%, transparent 68%);
+  transform: translateX(-125%);
+  transition: transform .85s cubic-bezier(.2,.8,.2,1);
+}
+.portrait-orbit {
+  transition: transform .7s cubic-bezier(.2,.8,.2,1), border-color .45s ease;
+}
+.portrait-float {
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease, box-shadow .4s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-portrait:hover .portrait-frame,
+  .hero-portrait:focus-within .portrait-frame {
+    transform: translateY(-7px) rotate(0deg) scale(1.045);
+    border-color: rgba(194,174,255,.8);
+    box-shadow: 0 34px 95px rgba(0,0,0,.58), 0 0 70px rgba(139,92,246,.32);
+  }
+  .hero-portrait:hover .portrait-frame img,
+  .hero-portrait:focus-within .portrait-frame img {
+    transform: scale(1.075);
+    filter: grayscale(72%) contrast(1.04);
+  }
+  .hero-portrait:hover .portrait-frame::after,
+  .hero-portrait:focus-within .portrait-frame::after {
+    transform: translateX(125%);
+  }
+  .hero-portrait:hover .portrait-orbit-one {
+    transform: rotate(-15deg) scaleY(.76);
+    border-color: rgba(174,143,255,.48);
+  }
+  .hero-portrait:hover .portrait-orbit-two {
+    transform: rotate(27deg) scaleY(.88);
+    border-color: rgba(174,143,255,.38);
+  }
+  .hero-portrait:hover .portrait-float-top {
+    transform: translate(5px,-4px);
+    border-color: rgba(194,174,255,.5);
+    box-shadow: 0 14px 34px rgba(82,53,160,.22);
+  }
+  .hero-portrait:hover .portrait-float-bottom {
+    transform: translate(-5px,4px);
+    border-color: rgba(194,174,255,.5);
+    box-shadow: 0 14px 34px rgba(82,53,160,.22);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-frame, .portrait-frame img, .portrait-frame::after,
+  .portrait-orbit, .portrait-float { transition: none !important; }
+  .portrait-frame::after { display: none; }
+}
