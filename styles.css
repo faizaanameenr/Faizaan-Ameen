@@ -244,3 +244,13 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
   .student-device-side { width:31%; height:62%; left:2%; top:19%; }
   .student-device-back { width:29%; height:59%; right:2%; top:22%; }
 }
+
+
+/* Accessibility and reliable anchor placement below the sticky header. */
+#home, #work, #about, #toolkit, #contact { scroll-margin-top: 100px; }
+.disclaimer { color: #aaa3ba; }
+.back-to-top { display:inline-flex; align-items:center; gap:8px; }
+.back-to-top svg { flex:0 0 auto; }
+@media (max-width: 560px) {
+  #home, #work, #about, #toolkit, #contact { scroll-margin-top: 82px; }
+}
