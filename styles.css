@@ -256,99 +256,100 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
 }
 
 
-/* StudentOS mockups: lock each device to a real phone ratio and stop grid stretching. */
-.project-featured {
-  align-items: center;
-}
+/* StudentOS: three consistent, realistic phone frames in one fixed showcase. */
+.project-featured { align-items: stretch; }
 .project-featured .student-showcase {
-  align-self: center;
+  position: relative;
+  align-self: stretch;
   width: 100%;
-  min-height: 500px !important;
   height: 500px;
+  min-height: 500px !important;
   overflow: hidden;
+  isolation: isolate;
 }
 .student-device {
   box-sizing: border-box;
-  height: auto !important;
-  max-height: 500px;
-  aspect-ratio: 9 / 19.5;
-  border: 5px solid #27272a;
-  border-radius: 2.5rem;
-  background: #09090b;
+  position: absolute;
   overflow: hidden;
+  aspect-ratio: 9 / 19.5;
+  height: auto !important;
+  border: 2px solid #34313f;
+  border-radius: 22px;
+  background: #09090f;
+  box-shadow: 0 20px 45px rgba(0,0,0,.48), inset 0 0 0 1px rgba(255,255,255,.08);
 }
 .student-device img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain !important;
+  object-fit: cover !important;
   object-position: center top !important;
+  border-radius: 19px;
 }
+.student-device::after { content: none !important; }
 .student-device-main {
-  width: min(34%, 210px) !important;
-  height: auto !important;
-  aspect-ratio: 9 / 19.5;
-  max-height: 500px;
+  width: min(34%, 205px) !important;
   left: 50% !important;
   top: 50% !important;
-  transform: translate(-50%, -50%) rotate(-2deg) !important;
+  right: auto !important;
+  transform: translate(-50%,-50%) !important;
   z-index: 3 !important;
   opacity: 1;
-  box-shadow: 0 25px 60px rgba(0,0,0,.48), 0 0 35px rgba(139,92,246,.1);
+  border-radius: 22px;
+  box-shadow: 0 24px 50px rgba(0,0,0,.55), 0 0 30px rgba(139,92,246,.12);
 }
 .student-device-side {
-  width: min(29%, 185px) !important;
-  height: auto !important;
-  aspect-ratio: 9 / 19.5;
-  max-height: 460px;
-  left: 10% !important;
-  top: 55% !important;
+  width: min(29%, 176px) !important;
+  left: 13% !important;
+  top: 50% !important;
   right: auto !important;
-  transform: translateY(-50%) rotate(-6deg) scale(.95) !important;
-  z-index: 1 !important;
-  opacity: .78;
+  transform: translateY(-50%) rotate(-3deg) !important;
+  z-index: 2 !important;
+  opacity: 1;
 }
 .student-device-back {
-  width: min(28%, 180px) !important;
-  height: auto !important;
-  aspect-ratio: 9 / 19.5;
-  max-height: 450px;
-  right: 9% !important;
-  top: 55% !important;
-  transform: translateY(-50%) rotate(6deg) scale(.95) !important;
+  width: min(29%, 176px) !important;
+  right: 13% !important;
+  left: auto !important;
+  top: 50% !important;
+  transform: translateY(-50%) rotate(3deg) !important;
   z-index: 1 !important;
-  opacity: .78;
+  opacity: 1;
 }
-.student-device::after {
-  height: 2.5%;
-}
-.student-showcase .visual-label {
-  z-index: 4;
+.student-showcase .visual-label { z-index: 4; }
+@media (min-width: 1101px) {
+  .project-featured .student-showcase { height: 560px; min-height: 560px !important; }
+  .student-device-main { width: min(34%, 220px) !important; }
+  .student-device-side { width: min(29%, 188px) !important; left: 10% !important; }
+  .student-device-back { width: min(29%, 188px) !important; right: 10% !important; }
 }
 @media (max-width: 1000px) {
-  .project-featured .student-showcase {
-    min-height: 460px !important;
-    height: 460px;
-  }
-  .student-device-main { width: min(35%, 195px) !important; }
-  .student-device-side { width: min(29%, 165px) !important; left: 7% !important; }
-  .student-device-back { width: min(28%, 160px) !important; right: 6% !important; }
+  .project-featured .student-showcase { height: 460px; min-height: 460px !important; }
+  .student-device-main { width: min(35%, 190px) !important; }
+  .student-device-side { width: min(29%, 158px) !important; left: 7% !important; }
+  .student-device-back { width: min(29%, 158px) !important; right: 7% !important; }
 }
 @media (max-width: 760px) {
-  .project-featured .student-showcase {
-    min-height: 450px !important;
-    height: 450px;
-  }
-  .student-device-main { width: min(39%, 210px) !important; }
-  .student-device-side { width: min(31%, 175px) !important; left: 6% !important; }
-  .student-device-back { width: min(30%, 170px) !important; right: 5% !important; }
+  .project-featured .student-showcase { height: 460px; min-height: 460px !important; }
+  .student-device-main { width: min(38%, 205px) !important; }
+  .student-device-side { width: min(31%, 168px) !important; left: 4% !important; }
+  .student-device-back { width: min(31%, 168px) !important; right: 4% !important; }
 }
 @media (max-width: 560px) {
-  .project-featured .student-showcase {
-    min-height: 420px !important;
-    height: 420px;
-  }
+  .project-featured .student-showcase { height: 400px; min-height: 400px !important; }
+  .student-device { border-radius: 17px; }
+  .student-device img { border-radius: 14px; }
+  .student-device-main { width: 39% !important; }
+  .student-device-side { width: 31% !important; left: 2% !important; }
+  .student-device-back { width: 31% !important; right: 2% !important; }
+  .student-showcase .visual-label { left: 12px; bottom: 12px; font-size: 7px; }
+}
+@media (max-width: 360px) {
+  .project-featured .student-showcase { height: 360px; min-height: 360px !important; }
   .student-device-main { width: 40% !important; }
-  .student-device-side { width: 31% !important; left: 3% !important; }
-  .student-device-back { width: 30% !important; right: 2% !important; }
+  .student-device-side { width: 31% !important; left: 1% !important; }
+  .student-device-back { width: 31% !important; right: 1% !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .student-device-main, .student-device-side, .student-device-back { transition: none !important; }
 }
