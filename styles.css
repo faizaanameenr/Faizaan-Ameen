@@ -353,3 +353,101 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
 @media (prefers-reduced-motion: reduce) {
   .student-device-main, .student-device-side, .student-device-back { transition: none !important; }
 }
+
+
+/* Personal portrait hero: monochrome photography with restrained violet accents. */
+.hero-portrait {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: 440px;
+  isolation: isolate;
+}
+.portrait-frame {
+  position: relative;
+  z-index: 2;
+  width: min(68%, 340px);
+  height: min(100%, 420px);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  border: 1px solid rgba(194,174,255,.38);
+  border-radius: 18px;
+  background: #13111e;
+  box-shadow: 0 28px 80px rgba(0,0,0,.52), 0 0 54px rgba(139,92,246,.16);
+  transform: rotate(2deg);
+}
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+  filter: grayscale(100%);
+}
+.portrait-caption {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 32px 15px 16px;
+  background: linear-gradient(transparent,rgba(10,9,18,.92));
+  color: #eee8ff;
+  font: 9px var(--mono);
+  letter-spacing: .12em;
+}
+.portrait-caption i {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--violet);
+}
+.portrait-orbit {
+  position: absolute;
+  z-index: 1;
+  width: 82%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(155,123,255,.22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.portrait-orbit-one { transform: rotate(-24deg) scaleY(.7); }
+.portrait-orbit-two { transform: rotate(35deg) scaleY(.82); }
+.portrait-float {
+  position: absolute;
+  z-index: 3;
+  padding: 10px 12px;
+  border: 1px solid rgba(194,174,255,.22);
+  border-radius: 4px;
+  background: rgba(15,12,25,.88);
+  color: #d9ccff;
+  font: 8px var(--mono);
+  letter-spacing: .1em;
+  box-shadow: 0 12px 28px rgba(0,0,0,.24);
+}
+.portrait-float-top { top: 15%; right: 0; }
+.portrait-float-bottom { bottom: 13%; left: 0; }
+@media (max-width: 1000px) {
+  .hero-portrait { height: 390px; }
+  .portrait-frame { width: min(72%,300px); }
+  .portrait-float { font-size: 7px; padding: 8px; }
+}
+@media (max-width: 760px) {
+  .hero-portrait { height: 390px; margin: 12px auto 0; width: min(100%,480px); }
+  .portrait-frame { width: min(64%,270px); height: min(100%,360px); }
+  .portrait-float-top { right: 2%; top: 12%; }
+  .portrait-float-bottom { left: 1%; bottom: 10%; }
+}
+@media (max-width: 560px) {
+  .hero-portrait { height: 340px; }
+  .portrait-frame { width: min(65%,240px); height: 330px; border-radius: 15px; }
+  .portrait-caption { font-size: 8px; padding: 28px 11px 13px; }
+  .portrait-float-top { right: 0; top: 10%; }
+  .portrait-float-bottom { left: 0; bottom: 8%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-frame { transform: none; }
+}
