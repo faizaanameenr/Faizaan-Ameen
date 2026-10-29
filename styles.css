@@ -207,8 +207,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
 /* StudentOS showcase fix: show complete screens at both desktop and mobile sizes, hide status-bar clock. */
 .student-device { background:#0c0a13; }
 .student-device img {
-  object-fit:fill !important;
-  object-position:center !important;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center top !important;
 }
 /* Cover only the screenshot status-bar strip; keep the rest of each app screen visible. */
 .student-device::after {
