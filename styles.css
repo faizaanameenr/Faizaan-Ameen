@@ -254,3 +254,101 @@ a:focus-visible, button:focus-visible { outline: 2px solid #b6a0ff; outline-offs
 @media (max-width: 560px) {
   #home, #work, #about, #toolkit, #contact { scroll-margin-top: 82px; }
 }
+
+
+/* StudentOS mockups: lock each device to a real phone ratio and stop grid stretching. */
+.project-featured {
+  align-items: center;
+}
+.project-featured .student-showcase {
+  align-self: center;
+  width: 100%;
+  min-height: 500px !important;
+  height: 500px;
+  overflow: hidden;
+}
+.student-device {
+  box-sizing: border-box;
+  height: auto !important;
+  max-height: 500px;
+  aspect-ratio: 9 / 19.5;
+  border: 5px solid #27272a;
+  border-radius: 2.5rem;
+  background: #09090b;
+  overflow: hidden;
+}
+.student-device img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;
+  object-position: center top !important;
+}
+.student-device-main {
+  width: min(34%, 210px) !important;
+  height: auto !important;
+  aspect-ratio: 9 / 19.5;
+  max-height: 500px;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) rotate(-2deg) !important;
+  z-index: 3 !important;
+  opacity: 1;
+  box-shadow: 0 25px 60px rgba(0,0,0,.48), 0 0 35px rgba(139,92,246,.1);
+}
+.student-device-side {
+  width: min(29%, 185px) !important;
+  height: auto !important;
+  aspect-ratio: 9 / 19.5;
+  max-height: 460px;
+  left: 10% !important;
+  top: 55% !important;
+  right: auto !important;
+  transform: translateY(-50%) rotate(-6deg) scale(.95) !important;
+  z-index: 1 !important;
+  opacity: .78;
+}
+.student-device-back {
+  width: min(28%, 180px) !important;
+  height: auto !important;
+  aspect-ratio: 9 / 19.5;
+  max-height: 450px;
+  right: 9% !important;
+  top: 55% !important;
+  transform: translateY(-50%) rotate(6deg) scale(.95) !important;
+  z-index: 1 !important;
+  opacity: .78;
+}
+.student-device::after {
+  height: 2.5%;
+}
+.student-showcase .visual-label {
+  z-index: 4;
+}
+@media (max-width: 1000px) {
+  .project-featured .student-showcase {
+    min-height: 460px !important;
+    height: 460px;
+  }
+  .student-device-main { width: min(35%, 195px) !important; }
+  .student-device-side { width: min(29%, 165px) !important; left: 7% !important; }
+  .student-device-back { width: min(28%, 160px) !important; right: 6% !important; }
+}
+@media (max-width: 760px) {
+  .project-featured .student-showcase {
+    min-height: 450px !important;
+    height: 450px;
+  }
+  .student-device-main { width: min(39%, 210px) !important; }
+  .student-device-side { width: min(31%, 175px) !important; left: 6% !important; }
+  .student-device-back { width: min(30%, 170px) !important; right: 5% !important; }
+}
+@media (max-width: 560px) {
+  .project-featured .student-showcase {
+    min-height: 420px !important;
+    height: 420px;
+  }
+  .student-device-main { width: 40% !important; }
+  .student-device-side { width: 31% !important; left: 3% !important; }
+  .student-device-back { width: 30% !important; right: 2% !important; }
+}
