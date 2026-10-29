@@ -57,8 +57,14 @@ if (finePointer && !reduceMotion) {
     "AI builder",
     "SaaS developer",
     "product designer",
-    "automation builder"
+    "automation engineer"
   ];
+  const article = document.querySelector("#rotating-article");
+  const updateArticle = (value) => {
+    if (!article) return;
+    article.textContent = /^[AEIOU]/i.test(value.trim()) ? "an" : "a";
+  };
+  updateArticle(roles[0]);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let index = 0;
   let intervalId;
@@ -67,12 +73,14 @@ if (finePointer && !reduceMotion) {
     if (reduceMotion) {
       role.textContent = roles[index];
       role.setAttribute("aria-label", roles[index]);
+      updateArticle(roles[index]);
       return;
     }
     role.classList.add("role-exit");
     window.setTimeout(() => {
       role.textContent = roles[index];
       role.setAttribute("aria-label", roles[index]);
+      updateArticle(roles[index]);
       role.classList.remove("role-exit");
       role.classList.remove("role-enter");
       void role.offsetWidth;
@@ -93,3 +101,13 @@ if (finePointer && !reduceMotion) {
   });
   start();
 })();
+
+
+// Keep footer navigation smooth and land at the actual top of the viewport.
+const backToTop = document.querySelector(".back-to-top");
+if (backToTop) {
+  backToTop.addEventListener("click", (event) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  });
+}
