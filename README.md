@@ -13,12 +13,12 @@ A responsive personal portfolio for **Vercel**, built with plain HTML, CSS, and 
 ## Deployment
 This repository is connected to Vercel and deploys from the `main` branch.
 
-Production URL: https://faizaan-ameen-r.vercel.app/
+Production URL: https://faizaanameenr.vercel.app/
 
 ## SEO setup
 1. Open Google Search Console and add the production URL.
 2. Verify ownership using one of Google's offered methods.
-3. Submit `https://faizaan-ameen-r.vercel.app/sitemap.xml`.
+3. Submit `https://faizaanameenr.vercel.app/sitemap.xml`.
 4. Inspect the homepage URL and request indexing after checking that it is publicly accessible.
 
 Indexing and search appearance are controlled by Google and are not guaranteed immediately.
